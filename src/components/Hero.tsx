@@ -2,7 +2,10 @@ import { GiCubeforce } from 'react-icons/gi'
 import { Button } from './ui/button'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 
+
 export default function Hero() {
+
+
     return (
         <main className="mt-16 flex gap-8 md:flex-nowrap flex-wrap      lg:px-3 ">
             <div className="w-full flex flex-col gap-5  ">

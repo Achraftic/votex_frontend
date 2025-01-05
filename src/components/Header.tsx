@@ -1,5 +1,6 @@
 import { GiCubeforce } from 'react-icons/gi'
 import { VscListSelection } from 'react-icons/vsc'
+import { NavLink } from 'react-router'
 
 export default function Header() {
     return (
@@ -16,7 +17,7 @@ export default function Header() {
                     <li className="hover:text-zinc-50 transition-colors ease-in-out">Services</li>
                 </ul>
                 <div className="flex gap-3">
-                    <button className=" text-zinc-50 px-4 py-1.5 hover:bg-gradient-to-br hover:from-primary hover:to-secondary rounded-2xl  transition-all">Login</button>
+                    <NavLink to={"/login"} className=" text-zinc-50 px-4 py-1.5 hover:bg-gradient-to-br hover:from-primary hover:to-secondary rounded-2xl  transition-all">Login</NavLink>
                     <button className="bg-primary bg-gradient-to-tl from-primary to-secondary  text-zinc-50 px-4 py-1.5 rounded-2xl">Sign Up</button>
                 </div>
             </nav>
