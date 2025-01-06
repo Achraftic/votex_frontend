@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import AuthLayout from "./layouts/AuthLayout";
 import Login from "./pages/auth/Login";
+import SignUp from "./pages/auth/SignUp";
 
 export const router = createBrowserRouter([
     {
@@ -32,8 +33,8 @@ export const router = createBrowserRouter([
                 element: <Login />,
             },
             {
-                path: "/register", // This is the default route
-                element: <About />,
+                path: "/signup", // This is the default route
+                element: <SignUp />,
             },
         ]
     }
