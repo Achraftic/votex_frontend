@@ -1,7 +1,7 @@
 
-export default function HowWork() {
+export default function  HowWork() {
     return (
-        <section className="py-8 bg-gradient-to-br rounded-lg from-primary to-secondary/70">
+        <section className="py-8  bg-gradient-to-br rounded-lg from-primary to-secondary/70">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl text-zinc-100 font-bold mb-12">How Votex Works</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

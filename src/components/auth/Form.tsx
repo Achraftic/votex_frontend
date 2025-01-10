@@ -3,13 +3,13 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { GiCubeforce } from 'react-icons/gi'
 import { NavLink } from 'react-router'
-
+import { motion } from 'framer-motion'
 type FormProps = {
   type: "login" | "signup",
 }
 export default function Form({ type = "login" }: FormProps) {
   return (
-    <form className='w-96   border border-primary/20 hover:border-primary/70 transition ease-in-out duration-200  px-8 py-14 text-sm rounded-xl  '>
+    <motion.form initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ duration: 0.5 ,ease: "easeOut" }} className='w-96   border border-primary/20 hover:border-primary/70 transition ease-in-out duration-200  px-8 py-14 text-sm rounded-xl  '>
       <div className='flex items-center justify-center flex-col mb-6 gap-2 '>
         <GiCubeforce size={60} className="text-primary mb-5" />
         <h1 className='text-2xl font-semibold'>Yooo , Welcome Back!</h1>
@@ -55,6 +55,6 @@ export default function Form({ type = "login" }: FormProps) {
           {type === "login" ? "Login" : "Sign Up"}
         </Button>
       </div>
-    </form>
+    </motion.form>
   )
 }

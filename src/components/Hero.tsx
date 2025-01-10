@@ -16,7 +16,7 @@ export default function Hero() {
                 <h1 className="lg:text-8xl sm:text-7xl text-6xl  font-bold text-zinc-50  lg:leading-[1.1] flex items-center flex-wrap  ">
                     Voting<GiCubeforce className="text-secondary mx-4" />Made Easy
                 </h1>
-                <Button variant="default" className="w-36 ">
+                <Button variant="default" className="w-36 font-semibold ">
                     Vote Now
                 </Button>
                 <div className="flex gap-3 items-center ">

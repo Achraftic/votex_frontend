@@ -1,8 +1,13 @@
 import { GiCubeforce } from 'react-icons/gi'
 import { VscListSelection } from 'react-icons/vsc'
 import { NavLink } from 'react-router'
+import PhoneSideBar from './PhoneSideBar'
+import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { IoMdClose } from 'react-icons/io'
 
 export default function Header() {
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <header className="flex  justify-between  items-center">
             <h1 className="text-2xl   font-semibold text-zinc-100 flex gap-1 "><GiCubeforce size={40}
@@ -22,7 +27,11 @@ export default function Header() {
                 </div>
             </nav>
 
-            <VscListSelection size={30} className="text-zinc-50 md:hidden" />
+            {!isOpen ? <VscListSelection onClick={() => setIsOpen(prev => !prev)} size={30} className="text-zinc-50 cursor-pointer md:hidden z-[100]" />
+                : <IoMdClose onClick={() => setIsOpen(prev => !prev)} size={30} className="text-zinc-50 cursor-pointer md:hidden z-[100]" />}
+            <AnimatePresence>
+                {isOpen && <PhoneSideBar />}
+            </AnimatePresence>
         </header>
     )
 }
