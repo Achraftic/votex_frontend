@@ -1,11 +1,10 @@
 import { GiCubeforce } from 'react-icons/gi'
-import { VscListSelection } from 'react-icons/vsc'
 import { NavLink } from 'react-router'
 import PhoneSideBar from './PhoneSideBar'
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { IoMdClose } from 'react-icons/io'
-
+import Hamburger from 'hamburger-react'
+import { cn } from '../lib/utils'
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false)
     return (
@@ -16,19 +15,22 @@ export default function Header() {
             <nav className="md:flex hidden flex-1 justify-between   items-center ">
                 <ul className="flex gap-7  m-auto text-sm  text-zinc-400 *:cursor-pointer">
 
-                    <li className="text-zinc-50">Home</li>
+                    <NavLink to="/" className="text-zinc-50">Home</NavLink>
                     <li className="hover:text-zinc-50 transition-colors ease-in-out">About</li>
-                    <li className="hover:text-zinc-50 transition-colors ease-in-out">Contact</li>
+                    <NavLink to="/contact" className="hover:text-zinc-50 transition-colors ease-in-out">Contact</NavLink>
                     <li className="hover:text-zinc-50 transition-colors ease-in-out">Services</li>
                 </ul>
                 <div className="flex gap-3">
                     <NavLink to={"/login"} className=" text-zinc-50 px-4 py-1.5 hover:bg-gradient-to-br hover:from-primary hover:to-secondary rounded-2xl  transition-all">Login</NavLink>
-                    <button className="bg-primary bg-gradient-to-tl from-primary to-secondary  text-zinc-50 px-4 py-1.5 rounded-2xl">Sign Up</button>
+                    <NavLink to={"/signup"} className="bg-primary bg-gradient-to-tl from-primary to-secondary  text-zinc-50 px-4 py-1.5 rounded-2xl">Sign Up</NavLink>
                 </div>
             </nav>
 
-            {!isOpen ? <VscListSelection onClick={() => setIsOpen(prev => !prev)} size={30} className="text-zinc-50 cursor-pointer md:hidden z-[100]" />
-                : <IoMdClose onClick={() => setIsOpen(prev => !prev)} size={30} className="text-zinc-50 cursor-pointer md:hidden z-[100]" />}
+           
+            <span className={cn('md:hidden z-[100] sticky top-0', isOpen ? "fixed right-10 top-8" : "")}  >
+                <Hamburger color='#EEEEEE' rounded toggled={isOpen} toggle={setIsOpen} />
+            </span>
+
             <AnimatePresence>
                 {isOpen && <PhoneSideBar />}
             </AnimatePresence>
